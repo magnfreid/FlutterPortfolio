@@ -4,6 +4,7 @@ import 'package:portfolio/widgets/pages/contact_page.dart';
 import 'package:portfolio/widgets/pages/projects_page.dart';
 import 'package:portfolio/widgets/pages/intro_page.dart';
 import 'package:portfolio/widgets/pages/skills_page.dart';
+import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -45,6 +46,12 @@ class _HomeState extends State<Home> {
   }
 
   @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     final bool mobile = MediaQuery.of(context).size.width < 600;
     return Scaffold(
@@ -78,15 +85,37 @@ class _HomeState extends State<Home> {
           Expanded(
             child: Center(
               child: mobile
-                  ? Expanded(
-                      flex: 4,
-                      child: FractionallySizedBox(
-                        widthFactor: 0.9,
-                        child: PageView(
-                          controller: _controller,
-                          children: _pages,
+                  ? Column(
+                      children: [
+                        Expanded(
+                          flex: 4,
+                          child: FractionallySizedBox(
+                            widthFactor: 0.9,
+                            child: PageView(
+                              controller: _controller,
+                              onPageChanged: (int page) {
+                                setState(() {
+                                  _currentPage = page;
+                                });
+                              },
+                              children: _pages,
+                            ),
+                          ),
                         ),
-                      ),
+                        Padding(
+                          padding: const EdgeInsets.all(16.0),
+                          child: SmoothPageIndicator(
+                            controller: _controller,
+                            count: _pages.length,
+                            effect: WormEffect(
+                              dotColor: Theme.of(context).colorScheme.outline,
+                              activeDotColor: Theme.of(
+                                context,
+                              ).colorScheme.primary,
+                            ),
+                          ),
+                        ),
+                      ],
                     )
                   : Row(
                       mainAxisAlignment: MainAxisAlignment.center,
