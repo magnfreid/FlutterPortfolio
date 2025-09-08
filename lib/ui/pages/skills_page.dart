@@ -38,19 +38,23 @@ class SkillsPage extends StatelessWidget {
       physics: NeverScrollableScrollPhysics(),
       gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
         maxCrossAxisExtent: 400,
+        mainAxisExtent: 450,
         mainAxisSpacing: 16,
         crossAxisSpacing: 16,
-        childAspectRatio: mobileLayout ? 0.9 : 0.4,
+        // childAspectRatio: mobileLayout ? 0.8 : 0.7,
       ),
       itemBuilder: (context, index) {
         final skill = skills[index];
         return Wrap(
           children: [
-            SkillItem(
-              title: skill.title,
-              descriptions: skill.descriptions,
-              imgPath: skill.imgPath,
-              size: 140,
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 20),
+              child: SkillItem(
+                title: skill.title,
+                descriptions: skill.descriptions,
+                imgPath: skill.imgPath,
+                size: 140,
+              ),
             ),
           ],
         );
