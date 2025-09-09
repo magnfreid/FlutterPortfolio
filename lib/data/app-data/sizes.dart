@@ -1,1 +1,0 @@
-const mobileWidthThreshold = 600;
