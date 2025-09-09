@@ -17,7 +17,15 @@ class ScrollContainer extends StatelessWidget {
         behavior: mobileLayout
             ? ScrollBehavior().copyWith(scrollbars: false)
             : ScrollBehavior(),
-        child: SingleChildScrollView(child: child),
+        child: SingleChildScrollView(
+          child: Padding(
+            padding: EdgeInsets.symmetric(
+              horizontal: mobileLayout ? 16 : 120,
+              vertical: 16,
+            ),
+            child: child,
+          ),
+        ),
       ),
     );
   }

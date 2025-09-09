@@ -15,11 +15,14 @@ class IntroPage extends StatelessWidget {
         spacing: 20,
         children: [
           CircleAvatar(
-            radius: 75,
+            radius: isMobileSize ? 90 : 150,
             backgroundImage: AssetImage("assets/profile_picture.jpeg"),
             backgroundColor: Colors.grey.shade200,
           ),
-          Text(introductionText),
+          Text(
+            introductionText,
+            style: TextStyle(fontSize: isMobileSize ? 14 : 18),
+          ),
         ],
       ),
     );

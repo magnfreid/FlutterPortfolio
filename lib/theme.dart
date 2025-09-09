@@ -37,7 +37,7 @@ final ThemeData customDarkTheme = ThemeData(
       ),
 
   colorScheme: ColorScheme.fromSeed(
-    seedColor: Colors.black, // Choose a seed appropriate for dark theme
+    seedColor: Colors.blueAccent, // Choose a seed appropriate for dark theme
     brightness: Brightness.dark,
     // Ensure contrast with white text if using this seed for component backgrounds
     // You might want to override some generated colors:

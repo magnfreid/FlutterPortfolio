@@ -41,7 +41,6 @@ class SkillsPage extends StatelessWidget {
         mainAxisExtent: 450,
         mainAxisSpacing: 16,
         crossAxisSpacing: 16,
-        // childAspectRatio: mobileLayout ? 0.8 : 0.7,
       ),
       itemBuilder: (context, index) {
         final skill = skills[index];
