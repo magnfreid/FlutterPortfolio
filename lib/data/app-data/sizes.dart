@@ -1,0 +1,1 @@
+const mobileWidthThreshold = 600;

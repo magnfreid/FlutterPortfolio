@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/data/constants/sizes.dart';
-import '../../data/constants/skills-data.dart';
+import '../../data/app-data/sizes.dart';
+import '../../data/app-data/skills-data.dart';
 import '../../data/models/skill-model.dart';
 import '../widgets/scroll_container.dart';
 import '../widgets/skill-item.dart';
@@ -10,7 +10,8 @@ class SkillsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final isMobileSize = MediaQuery.of(context).size.width < widthThreshold;
+    final isMobileSize =
+        MediaQuery.of(context).size.width < mobileWidthThreshold;
     return ScrollContainer(
       mobileLayout: isMobileSize,
       child: Column(

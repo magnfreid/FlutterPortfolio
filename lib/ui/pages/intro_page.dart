@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/data/constants/sizes.dart';
-import '../../data/constants/app_texts.dart';
+import '../../data/app-data/app_texts.dart';
+import '../../data/app-data/sizes.dart';
 import '../widgets/scroll_container.dart';
 
 class IntroPage extends StatelessWidget {
@@ -8,7 +8,8 @@ class IntroPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    bool isMobileSize = MediaQuery.of(context).size.width < widthThreshold;
+    bool isMobileSize =
+        MediaQuery.of(context).size.width < mobileWidthThreshold;
     return ScrollContainer(
       mobileLayout: isMobileSize,
       child: Column(

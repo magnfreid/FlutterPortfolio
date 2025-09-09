@@ -2,12 +2,10 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:portfolio/data/constants/sizes.dart';
 import 'package:portfolio/ui/pages/contact_page.dart';
 import 'package:portfolio/ui/pages/intro_page.dart';
 import 'package:portfolio/ui/pages/showcase_page.dart';
 import 'package:portfolio/ui/pages/skills_page.dart';
-import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
